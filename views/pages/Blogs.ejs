@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/custom.css">
+	<link rel="stylesheet" href="/bulma.min.css">
+	<link rel="icon" href="logo.ico">
+ </head>
+ <body>
+	<%- include('../templates/nav')-%>
+	<div class="container">
+		<div class="columns py-6">
+			<div class="column  has-text-centered">
+				<div class="columns">
+					<div class="column">
+						<a id="tab" href="Blogs?category=Math" class="button is-primary is-large is-outlined">Math</a>
+					</div>
+					<div class="column">
+						<a id="tab" href="Blogs?category=Arabic" class="button is-warning is-large is-outlined">Arabic</a>
+					</div>
+				</div>
+			</div>
+			<div class="column has-text-centered">
+				<div class="columns">
+					<div class="column">
+						<a id="tab" href="Blogs?category=Science" class="button is-success is-large is-outlined">Science</a>
+					</div>
+					<div class="column">
+						<a id="tab" href="Blogs?category=English" class="button is-danger is-large is-outlined">English</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%if(Blogs === null){%>
+		<div class="container">
+			<h1 class="title">No Blogs Here</h1>
+		</div>
+	<%}else{%>
+		<%Blogs.forEach(val => {%>
+			<section id="blog" class="section px-6">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="columns">
+							<div class="column">
+								<p class="is-size-2"><%=val.title%></p>
+							</div>
+						</div>
+					</div>
+					<div class="field notification has-background-white">
+						<p><%=val.content.head%></p>
+					</div>
+					<div class="field notification has-background-white">
+						<p><%-val.content.main%></p>
+					</div>
+					<div class="field is-size-5 notification has-background-white">
+						<p><%=val.content.footer%></p>
+					</div>
+				</div>
+			</section>
+	<%})};%>
+	<script></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn-Blog</title>
+    <link rel="stylesheet" type="text/css" href="/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+</head>
+<body>
+    <%- include('../templates/nav')-%>
+    <div class="container mt-4 has-text-centered">
+        <p class="title">Write your opinion</p>
+        <p class="subtitle">Help us to provide more things in this web-site</p>
+    </div>
+    <div class="wrap1">
+        <%data.forEach(function(val){%>
+            <%- include('../templates/sub',{user:val.userName,content:val.content})-%>
+        <%});%>
+    </div>
+    <div class="field container has-text-centered">
+        <form method="POST" action="/Sub_post">
+            <div id="sub-m" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="field">
+                        <label class="label">Your Name</label>
+                        <div class="controls">
+                            <input name="user" class="input" type="text" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Your Advice</label>
+                        <div class="controls">
+                            <textarea class="textarea" name="sub"></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button type="submit" class="button is-success is-outlined is-fullwidth">Submit</button>
+                    </div>
+                </div>
+                <button id="sub-c" type="button" class="modal-close is-large" aria-label="close"></button>
+            </div>
+            <button type="button" id="add" class="button is-primary">Add...</button>
+        </form>
+    </div>
+    <script src="js/Sub.js"></script>
+</body>
+</html>

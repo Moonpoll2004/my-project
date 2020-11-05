@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/custom.css">
+	<link rel="stylesheet" href="/bulma.min.css">
+
+</head>
+<body>
+	<%- include('../templates/nav')-%>
+    <div id="img" class="columns img-anime-home">
+		<div class="column" >
+			<img src="learn.jpg" alt="hello">
+		</div>
+	</div>
+	
+	<div class="stage">
+		<div id="start" class="start">ClickMe</div>
+		<p id="ten-text" class="ten-text">أهلا وسهلا بكم</p>
+		<section class="tens">
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+			<div class="ten"></div>
+		</section>
+	</div>
+	<%- include('../templates/footer')-%>
+	
+	<script>
+		window.onload= function(){
+			var footer = document.getElementById('foot');
+			var colors = ["dodgerblue","#d1153b","yellow","green"]
+			var start = document.getElementById('start')
+			var text = document.getElementById('ten-text')
+			var n = 500
+			setTimeout(function(){
+				img.style.opacity = "1"
+			},800)
+			//middle animation
+			start.addEventListener("click",function(){
+				start.style.display = "none"
+				document.querySelectorAll('.ten').forEach(function(val){
+				setTimeout(function(){
+					val.style.backgroundColor = "wheat"
+				},n+=300)
+				setTimeout(function(){
+				    text.style.opacity ="1";
+			    },3000)
+			})
+			////
+			})
+			setInterval(function(){
+				var color = Math.floor(Math.random()*colors.length)
+				footer.style.backgroundColor = colors[color]
+				console.log(colors[color])
+			},2000)
+
+			start.addEventListener("click",function(){
+				start.style.fill = "dodgerblue"
+			})
+		}
+	</script>
+</body>
+</html>

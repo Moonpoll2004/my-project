@@ -1,0 +1,41 @@
+<nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href='/'>
+      <img src="lern.jpg">
+    </a>
+
+    <a role="button" id="brg" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start is-centered">
+      <a href="/Blogs" class="navbar-item">
+        Blogs
+      </a>
+
+      <a href="/Subs" class="navbar-item">
+        Subscription
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var nburg = document.getElementById('brg');
+  var tar = document.getElementById(nburg.dataset.target)
+
+
+  nburg.addEventListener('click',()=>{
+    nburg.classList.toggle('is-active');
+    tar.classList.toggle('is-active')
+  })
+</script>

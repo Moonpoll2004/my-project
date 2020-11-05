@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/bulma.min.css">
+    <link rel="stylesheet" href="/custom.css">
+</head>
+<body>
+    <div class="columns">
+        <div class="column">
+            <form method="GET" action="/admin/portal" class="container mt-5 form-admin notification is-primary">
+                <div class="field">
+                    <p class="title">Login</p>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="name" class="label has-text-white">
+                        Admin Name
+                    </label>
+                    <div class="control">
+                        <input class="input" type="text" name="name" required>
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="name" class="label has-text-white">
+                        Admin Password
+                    </label>
+                    <div class="control">
+                        <input class="input" type="password" name="pass" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <button type="submit" class="button is-info">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

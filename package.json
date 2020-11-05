@@ -1,0 +1,23 @@
+{
+  "name": "LearnBlog",
+  "version": "1.0.0",
+  "description": "simple Blog for sending",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "khatab alhinai",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "mongoose": "^5.10.9",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}
